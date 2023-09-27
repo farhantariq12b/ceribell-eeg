@@ -108,7 +108,7 @@ export const options = {
 const ChartComponent = ({ csvData }) => {
   return (
     <div>
-      {csvData ? (
+      {csvData?.length ? (
         <div style={{ width: "8000px" }}>
           <Line
             data={{

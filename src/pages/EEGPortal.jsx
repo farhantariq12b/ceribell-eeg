@@ -4,15 +4,13 @@ import EEGCharts from "../components/EEGCharts";
 import { FIRST_HEADER, SECOND_HEADER } from "../constants/constants";
 import { Grid } from "@mui/material";
 import UnitsMenu from "../components/UnitsMenu";
-// SECOND_HEADER
-// headers={FIRST_HEADER}
 
 const EEGPortal = () => {
   const [isLoading, firstHalf, secondHalf] = useFetchCsvData("/index.json");
 
   return (
     <div className="charts-container">
-      {isLoading && firstHalf && secondHalf ? (
+      {isLoading && firstHalf?.length && secondHalf?.length ? (
         <p>Loading Charts</p>
       ) : (
         <div>
